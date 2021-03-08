@@ -1,0 +1,6 @@
+/target
+/neg
+/pos
+tags
+*.csv
+.~lock.*
