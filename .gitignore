@@ -4,3 +4,5 @@
 tags
 *.csv
 .~lock.*
+/sentiment labelled sentences
+/test_data

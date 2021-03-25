@@ -27,11 +27,10 @@ fn denot_word(word: &str) -> &str {
     }
 }
 
-pub fn get_sentiment_dict() -> std::io::Result<HashMap<String, f32>> {
-    let settings = Settings::default();
-    let neg_map = get_map_from_folder(Path::new("./neg"), &settings)?;
+pub fn get_sentiment_dict(settings: &Settings) -> std::io::Result<HashMap<String, f32>> {
+    let neg_map = get_map_from_folder(Path::new("./neg"), settings)?;
     println!("The negative reviews have been parsed!");
-    let pos_map = get_map_from_folder(Path::new("./pos"), &settings)?;
+    let pos_map = get_map_from_folder(Path::new("./pos"), settings)?;
     println!("The positive reviews have been parsed!");
     // Results in (positivity in [-1, 1], and predicted accuracy [0, 1])
     let mut res_map: HashMap<String, f32> = HashMap::new();
